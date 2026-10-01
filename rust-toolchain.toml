@@ -1,0 +1,4 @@
+# Pinned: the engine must replay old combats bit-for-bit, and lints must not drift between machines.
+[toolchain]
+channel = "1.98.0"
+components = ["rustfmt", "clippy"]

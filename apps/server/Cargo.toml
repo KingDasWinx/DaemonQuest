@@ -1,0 +1,12 @@
+[package]
+name = "dq-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+dq-protocol.workspace = true
+
+[lints]
+workspace = true

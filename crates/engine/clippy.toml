@@ -1,0 +1,14 @@
+# Replaces the root clippy.toml for this crate (clippy does not merge configs).
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+
+# Determinism: time comes in as a parameter, iteration order must be stable.
+disallowed-methods = [
+    { path = "std::time::SystemTime::now", reason = "the engine never reads the clock; take time as input" },
+    { path = "std::time::Instant::now", reason = "the engine never reads the clock; take time as input" },
+]
+disallowed-types = [
+    { path = "std::collections::HashMap", reason = "non-deterministic iteration order; use BTreeMap" },
+    { path = "std::collections::HashSet", reason = "non-deterministic iteration order; use BTreeSet" },
+]
